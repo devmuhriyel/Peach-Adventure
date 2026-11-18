@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!-- Bantay Ulan - made by MJ (devmuhriyel) - 2026 -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bantay Ulan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <canvas id="game"></canvas>
+
+  <button id="muteBtn" class="small mute" onclick="toggleMute()">♪ Sound on</button>
+
+  <!-- HUD while playing -->
+  <div id="hud" class="hud hidden">
+    <button class="small" onclick="goMenu()">◀ Back</button>
+    <span>Birdie <b id="hearts">♥♥♥</b></span>
+    <span id="wave">Rain 1/5</span>
+  </div>
+
+  <div id="banner" class="banner"></div>
+
+  <!-- story caption -->
+  <div id="caption" class="caption hidden">
+    <p id="captionText"></p>
+    <div class="row">
+      <button class="small" id="skipBtn" onclick="startPlay()">Skip</button>
+      <button class="big" id="nextBtn" onclick="nextStory()">Next ▶</button>
+    </div>
+  </div>
+
+  <!-- ending caption -->
+  <div id="ending" class="caption hidden">
+    <h2 id="endTitle"></h2>
+    <p id="endText"></p>
+    <div class="row">
+      <button class="small" onclick="goMenu()">Menu</button>
+      <button class="big" onclick="startPlay()">Play again</button>
+    </div>
+  </div>
+
+  <!-- TITLE SCREEN -->
+  <div id="title" class="overlay">
+    <div class="card">
+      <h1>Bantay Ulan</h1>
+      <p class="sub">Peach found a sleeping bird. Now she has to keep the rain away.</p>
+      <div class="keys">
+        <span>↑</span><span>↓</span><span>←</span><span>→</span>
+      </div>
+      <p class="tip">Press the pink arrow on a raindrop to scratch it. Wrong key = dizzy!</p>
+      <button class="big" onclick="startStory()">Start</button>
+      <p class="by">a game by MJ</p>
+    </div>
+  </div>
+
+  <!-- arrow buttons for phones -->
+  <div id="pad" class="pad hidden">
+    <button data-dir="left">←</button>
+    <button data-dir="up">↑</button>
+    <button data-dir="down">↓</button>
+    <button data-dir="right">→</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
